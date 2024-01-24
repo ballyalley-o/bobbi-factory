@@ -1,6 +1,5 @@
 import IUser from '../interface/IUser'
-
-type CallBack = () => {}
+import { CallBack } from '../types'
 
 export class User {
   constructor(private data: IUser) {}

@@ -1,7 +1,6 @@
-interface IUser {
-  name: string
-  age: number
-}
+import IUser from '../interface/IUser'
+
+type CallBack = () => {}
 
 export class User {
   constructor(private data: IUser) {}
@@ -13,4 +12,6 @@ export class User {
   set(update: IUser): void {
     Object.assign(this.data, update)
   }
+
+  on(eventName: string, callback: CallBack): void {}
 }

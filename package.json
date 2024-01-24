@@ -1,0 +1,23 @@
+{
+  "name": "bobbi-factory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ballyalley-o/bobbi-factory.git"
+  },
+  "author": "Bally Lomibao <bgoodies.dev@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ballyalley-o/bobbi-factory/issues"
+  },
+  "homepage": "https://github.com/ballyalley-o/bobbi-factory#readme",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

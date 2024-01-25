@@ -1,1 +1,1 @@
-export type CallBack = () => {}
+export type CallBack = () => void

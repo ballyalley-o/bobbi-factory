@@ -1,8 +1,6 @@
-import { User } from './model'
+import axios from 'axios'
+import { PATH } from './path'
 
-const user = new User({ name: 'myname', age: 20 })
+const user = { name: 'John', age: 30 }
 
-user.on('change', () => {})
-user.on('click', () => {})
-
-console.log(user)
+axios.post(PATH.API.USER, user)

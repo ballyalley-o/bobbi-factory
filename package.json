@@ -5,6 +5,9 @@
   "main": "app.ts",
   "type": "module",
   "scripts": {
+    "start": "npm run start*",
+    "start:db": "json-server -w db/db.json -p 3234",
+    "start:parcel": "npx parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +21,12 @@
   },
   "homepage": "https://github.com/ballyalley-o/bobbi-factory#readme",
   "devDependencies": {
+    "@types/node": "^20.11.6",
+    "axios": "^1.6.6",
+    "dotenv": "^16.4.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
   }
 }

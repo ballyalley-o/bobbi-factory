@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { PATH } from './path'
+import { User } from './model/User'
 
-const user = { name: 'John', age: 30 }
+const user = new User({ id: 1 })
 
-axios.post(PATH.API.USER, user)
+user.set({ name: 'bobbi' })
+user.set({ age: 8 })

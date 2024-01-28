@@ -2,7 +2,7 @@ import axios, { AxiosPromise } from 'axios'
 import { PATH } from '../path'
 
 interface IHasId {
-  id: number
+  id?: number
 }
 
 export class Sync<T extends IHasId> {
@@ -14,9 +14,9 @@ export class Sync<T extends IHasId> {
     const { id } = data
 
     if (id) {
-      return axios.put(PATH.API.USER_ID(id.toString()), id)
+      return axios.put(PATH.API.USER_ID(id.toString()), data)
     } else {
-      return axios.post(PATH.API.USER, id)
+      return axios.post(PATH.API.USER, data)
     }
   }
 }

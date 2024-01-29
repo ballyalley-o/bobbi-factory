@@ -16,6 +16,11 @@ export class User extends Model<IUser> {
     return new Collection<User, IUser>((json: IUser) => User.buildUser(json))
   }
 
+  setRandomAge(): void {
+    const age = Math.round(Math.random() * 100)
+    this.set({ age })
+  }
+
   isAdmin(): boolean {
     if (this.get('id') === 1) {
       console.log('User is admin')

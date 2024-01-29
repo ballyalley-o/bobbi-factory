@@ -5,10 +5,10 @@ import { User } from './model/User'
 const def = { name: 'Default', age: 0 }
 const hank = { id: 1, name: 'Hank', age: 37 }
 
-const user = new User(hank)
+const user = User.buildUser({ id: 2 })
 
-// const user = new User(def)
-user.on('save', () => {
+user.on('change', () => {
   console.log(user)
 })
-user.save()
+
+user.fetch()

@@ -1,11 +1,8 @@
 import axios, { AxiosPromise } from 'axios'
 import { PATH } from '../path'
+import IHasId from '../interface/IHasId'
 
-interface IHasId {
-  id?: number
-}
-
-export class Sync<T extends IHasId> {
+export class ApiSync<T extends IHasId> {
   fetch(id: number): AxiosPromise {
     return axios.get(PATH.API.USER_ID(id.toString()))
   }

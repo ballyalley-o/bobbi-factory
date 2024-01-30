@@ -1,6 +1,5 @@
-import { User, Model } from '../model'
+import { Model } from '../model'
 import IHasId from '../interface/IHasId'
-
 
 abstract class View<T extends Model<K>, K extends IHasId> {
   region: { [key: string]: Element } = {}
@@ -62,9 +61,9 @@ abstract class View<T extends Model<K>, K extends IHasId> {
     this.mapRegion(templateEl.content)
     this.onRender()
 
-    // if (!this.parent) {
-    //   return
-    // }
+    if (!this.parent) {
+      return
+    }
 
     this.parent.append(templateEl.content)
   }

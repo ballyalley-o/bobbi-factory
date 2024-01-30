@@ -1,9 +1,6 @@
 import { User, Model } from '../model'
 import IHasId from '../interface/IHasId'
 
-interface IViewModel {
-  on(eventName: string, callback: () => void): void
-}
 
 abstract class View<T extends Model<K>, K extends IHasId> {
   region: { [key: string]: Element } = {}

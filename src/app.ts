@@ -1,22 +1,17 @@
-import axios from 'axios'
-import { PATH } from './path'
-import { User } from './model/User'
-import { Collection } from './model/Collection'
+import { User, Collection } from './model'
 import IUser from './interface/IUser'
-import { UserForm, UserEdit } from './view'
+import { UserList } from './view'
 
 const def = { name: 'Default', age: 10 }
-// const hank = { id: 1, name: 'Hank', age: 37 }
 
-// const collection = User.buildUserCollection()
-// collection.on('change', () => {
-//   console.log(collection)
-// })
-// collection.fetch()
+const users = new Collection((json: IUser) => User.buildUser(json))
+users.on('change', () => {
+    const root = document.getElementById('root');
 
-const user = User.buildUser(def)
-const rootEl = document.getElementById('root')!
+    if (root) {
+      new UserList(root, users).render()
+    }
+  });
 
-const userEdit = new UserEdit(rootEl, user)
-userEdit.render()
-console.log(userEdit)
+  users.fetch();
+

@@ -1,5 +1,7 @@
 import { User } from '../model'
-import { View, UserView, UserForm } from '../view'
+import View from './View'
+import UserView from './UserView'
+import UserForm from './UserForm'
 import IUser from '../interface/IUser'
 
 class UserEdit extends View<User, IUser> {
